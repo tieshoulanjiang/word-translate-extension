@@ -1,0 +1,142 @@
+/* 选词小 logo */
+#stp-logo {
+  position: absolute;
+  z-index: 2147483647;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  user-select: none;
+  font: 14px/1 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+#stp-logo:hover { transform: scale(1.03); }
+
+/* 弹窗容器 */
+#stp-panel {
+  position: fixed;
+  z-index: 2147483647;
+  width: 360px;
+  height: 220px;
+  display: none;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.25);
+  border: 1px solid rgba(0,0,0,.08);
+  overflow: hidden;
+  resize: both;         /* ✅ 可缩放 */
+  min-width: 260px;
+  min-height: 160px;
+}
+
+/* 顶部可拖拽栏 */
+#stp-header {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  background: #111;
+  color: #fff;
+  cursor: move;         /* ✅ 可拖拽 */
+  user-select: none;
+  font: 13px system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+#stp-title {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+#stp-close {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+}
+#stp-close:hover { background: rgba(255,255,255,.22); }
+
+/* 内容区 */
+#stp-body {
+  height: calc(100% - 38px);
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: auto;
+  font: 13px/1.35 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+.stp-row { margin-bottom: 10px; }
+.stp-label { opacity: .7; font-size: 12px; margin-bottom: 4px; }
+.stp-box {
+  background: #f6f6f6;
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 10px;
+  padding: 8px;
+  word-break: break-word;
+}
+
+/* 右下角设置按钮 */
+/* ❌ 删除这整段：右下角设置按钮 */
+/*
+#stp-settings {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  border: 0;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+}
+#stp-settings:hover { opacity: .92; }
+*/
+
+/* 设置弹层 */
+#stp-settings-modal {
+  position: absolute;
+  inset: 38px 0 0 0;
+  background: rgba(255,255,255,.98);
+  display: none;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: auto;
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+.stp-field { margin: 8px 0; }
+.stp-field label { display:block; font-size: 12px; opacity:.75; margin-bottom: 4px; }
+.stp-field input, .stp-field select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.15);
+  outline: none;
+}
+#stp-save {
+  border: 0;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+}
+#stp-cancel {
+  border: 0;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #e9e9e9;
+  color: #111;
+  font-size: 12px;
+  margin-left: 8px;
+}
